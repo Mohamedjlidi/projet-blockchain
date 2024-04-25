@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Decentralized Library</h1>
+
+        <div class="section">
+            <h2>Available Books</h2>
+            <ul id="booksList"></ul>
+        </div>
+
+        <div class="section">
+            <h2>Books</h2>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Available</th>
+                    </tr>
+                </thead>
+                <tbody id="booksTableBody">
+                    <!-- Table body will be filled dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <form id="borrowForm">
+                <label for="bookId">Book ID:</label>
+                <input type="number" id="bookId" required>
+                <button type="submit">Borrow</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <form id="returnForm">
+                <label for="bookIdReturn">Book ID:</label>
+                <input type="number" id="bookIdReturn" required>
+                <button type="submit">Return</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/trufflesuite/truffle/build/truffle-contract.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
